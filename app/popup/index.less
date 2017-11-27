@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+@import '../../components/base/reset.less';
+
+body {
+  width: 320px;
+  margin: 0px;
+  padding: 10px;
+  background: @colorBG;
+  color: @colorText;
+  font-size: 12px;
+}
+
+.section_1,.section_2 {
+  display: block;
+
+  &.hide {
+    display: none;
+  }
+}
+
+.main-wall {
+  position: relative;
+  overflow: hidden;
+
+  .main-qr {
+    width: 150px;
+    height: 150px;
+    float: left;
+  }
+
+  .main-content {
+    margin-left: 170px;
+    padding: 0;
+    .border-box();
+    font-size: 12px;
+    text-shadow: 1px 1px 1px #ffffff;
+    line-height: 18px;
+
+    .title {
+      color: @colorTitle;
+      font-weight: bold;
+      text-align: left;
+      padding-top: 30px;
+    }
+    .content {
+      padding-top: 15px;
+    }
+  }
+}
+
+.control-wall {
+  border-top: 1px solid @colorBorder;
+  margin-top: 10px;
+
+  #btnMain {
+    background: url('./edit.png') no-repeat left 8px;
+    background-size: 20px 20px;
+    user-select: none;
+    text-shadow: 1px 1px 1px #ffffff;
+    display: block;
+    padding: 12px 0 5px 25px;
+  }
+}
+
+#btnBack {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url('./back.png');
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  margin-bottom: 5px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, .8);
+  }
+}
+
+#inputTextMyself {
+  width: 320px;
+  height: 118px;
+  color: #000;
+  padding: 2px 5px;
+  .border-box();
+}
+
+#btnGenerate {
+  text-shadow: 1px 1px 1px #ffffff;
+  display: block;
+  padding: 8px 0;
+  user-select: none;
+}
+
+#qrImg2 {
+  display: none;
+  width: 320px;
+  height: 320px;
+  margin-top: 8px;
+}

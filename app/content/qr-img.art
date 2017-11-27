@@ -1,0 +1,5 @@
+<div class='jr_qr_overlay' style="cursor: pointer; position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, .8); z-index: 1000001;">
+        <div class="jr_qr_wall" style="-webkit-border-radius: 3px; background-color: rgba(128, 128, 128, .7); cursor: n-resize; position: fixed; padding: 10px; left: {{x}}px; top: {{y}}px; z-index: 1001; width: {{width}}px; height: {{height}}px;">
+                <img class="jr_qr_img" src="{{imgUrl}}" style="-webkit-border-radius: 5px; padding: 0; -webkit-box-shadow: 1px 1px 3px #999; opacity: 1; width: {{width}}px; height: {{height}}px;">
+        </div>
+</div>

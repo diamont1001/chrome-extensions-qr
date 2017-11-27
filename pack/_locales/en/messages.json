@@ -1,0 +1,46 @@
+{
+   "extname": {
+      "description": "插件的名字",
+      "message": "Jr QR"
+   },
+   "description": {
+      "description": "插件的简介",
+      "message": "Create ar images instantly! Download and share easily. All for free!"
+   },
+   "extlanguage": {
+      "description": "当前语言-中文",
+      "message": "en"
+   },
+   "popup_main_btn": {
+      "description": "主面板按钮",
+      "message": "Custom Content to QR code"
+   },
+   "popup_title": {
+      "description": "主面板title",
+      "message": "Current page"
+   },
+   "popup_main_content": {
+      "description": "主面板内容",
+      "message": "Scan the QR code by phone to open current page."
+   },
+   "popup_2_placeholder": {
+      "description": "placeholder",
+      "message": "Please enter any text or URL"
+   },
+   "popup_2_btn": {
+      "description": "自定义面板按钮",
+      "message": ">> Generate"
+   },
+   "menu_text_link": {
+      "message": "Current link to a QR code"
+   },
+   "menu_text_img": {
+      "message": "Selected picture to a QR code"
+   },
+   "menu_text_select": {
+      "message": "Selected content to a QR code"
+   },
+   "menu_text_page": {
+      "message": "Current page to a QR code"
+   }
+}

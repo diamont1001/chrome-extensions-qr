@@ -1,0 +1,41 @@
+{
+  "name": "chrome-extensions-demo",
+  "version": "1.0.1",
+  "description": "Chrome extensions 插件扩展程序 demo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack -w --debug",
+    "dist": "webpack -p",
+    "lint": "eslint app/**/*.js components/**/*.js",
+    "test": "npm run lint"
+  },
+  "keywords": [
+    "qr",
+    "qrcode",
+    "chrome",
+    "extensions",
+    "plugin"
+  ],
+  "author": "材主 <diamont1001@163.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "art-template": "^4.12.2",
+    "art-template-loader": "^1.4.3",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.10.0",
+    "eslint-config-jr": "^1.0.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "jr-qrcode": "^1.1.0"
+  }
+}

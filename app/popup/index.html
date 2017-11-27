@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="description" content=" Jr Qr">
+    <title>Jr二维码</title>
+</head>
+<body>
+    <!-- 解决 Mac 上出现蓝色焦点选择框的 BUG -->
+    <a href="#" style="width: 0; height:0;"></a>
+
+    <section class="section_1">
+        <div id="main" class="main-wall">
+            <img class="main-qr">
+            <div class="main-content">
+                <p class="title"></p>
+                <p class="content"></p>
+            </div>
+        </div>
+        <div class="control-wall">
+            <a id="btnMain" href="#"></a>
+        </div>
+    </section>
+    <section class="section_2 hide">
+        <a id="btnBack" href="#"></a>
+        <textarea id="inputTextMyself" class="qr_font" placeholder=""></textarea>
+        <a id="btnGenerate" href="#"></a>
+        <img id="qrImg2" src="">
+    </section>
+    <script type="text/javascript" src="../lib/jquery-1.7.1.min.js"></script>
+</body>
+</html>
