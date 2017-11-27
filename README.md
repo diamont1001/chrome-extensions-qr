@@ -2,6 +2,8 @@
 
 简捷的二维码生成工具，将当前网页链接、内容及自定义输入内容等生成二维码。
 
+![](https://raw.githubusercontent.com/diamont1001/chrome-extensions-qr/master/resource/440x280.png)
+
 ## 参与开发
 
 ```bash
