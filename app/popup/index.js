@@ -5,7 +5,18 @@ require('./index.less');
 const jrQrcode = require('jr-qrcode');
 const InputText = require('./input-text.js');
 
-console.log(InputText.getValue());
+/* eslint-disable */
+// Google Analytics
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-81627907-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+/* eslint-enable */
 
 $(function() {
   const $main = $('#main');
@@ -34,6 +45,8 @@ $(function() {
 
     $('.section_1').addClass('hide');
     $('.section_2').removeClass('hide');
+
+    _gaq.push(['_trackEvent', 'btn_popup_main_qr_myself', 'clicked']);
   });
 
   $('#btnBack').click(function(e) {
@@ -45,6 +58,8 @@ $(function() {
 
     InputText.clear();
     $('#inputTextMyself').val('');
+
+    _gaq.push(['_trackEvent', 'btn_popup_back', 'clicked']);
   });
 
   // 自定义内容生成二维码
@@ -60,6 +75,8 @@ $(function() {
     $('#qrImg2').attr('src', imgUrl).show();
 
     InputText.setValue(input);
+
+    _gaq.push(['_trackEvent', 'btn_popup_generate_qr_myself', 'clicked']);
   });
 
   $(window).unload(function() {

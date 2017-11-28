@@ -2,7 +2,7 @@
    "manifest_version": 2,
    "name": "__MSG_extname__",
    "description": "__MSG_description__",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "default_locale": "en",
 
    "background": {
@@ -33,5 +33,5 @@
       "https://*/*",
       "contextMenus"
    ],
-   "content_security_policy": "script-src 'self' https://image.uc.cn; object-src 'self'"
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
