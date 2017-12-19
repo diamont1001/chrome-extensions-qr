@@ -16,3 +16,6 @@ $npm run dev
 # release 打包
 $npm run dist
 ```
+
+## 文档
+相关文档可以参考：https://github.com/diamont1001/blog/issues/12
