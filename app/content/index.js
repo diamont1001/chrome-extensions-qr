@@ -51,7 +51,7 @@ document.addEventListener('mousedown', function(e) {
   }
 
   // 向 bg.js 发送消息
-  chrome.extension.sendMessage({
+  chrome.runtime.sendMessage({
     name: 'update_menu',
     menus: menus
   });
