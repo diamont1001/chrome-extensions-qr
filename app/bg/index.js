@@ -100,12 +100,11 @@ function createContextMenus() {
             type: 'popup'
           });
         } else {
-          // 注入二维码处理JS
+          // console.log('注入二维码处理JS');
           chrome.scripting.executeScript({
             target: {tabId: tab.id},
             files: [
               'lib/jquery-1.7.1.min.js',
-              'lib/jquery.mousewheel.js', // 鼠标滚轮事件
               'bundle/content-qr.js'
             ]
           });
