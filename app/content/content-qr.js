@@ -6,25 +6,31 @@
 
 /* global $ */
 
-// 鼠标滚轮（放大缩小）
-$('.jr_qr_wall').mousewheel(function(event, delta/* , deltaX, deltaY */) {
-  const $this = $(this);
-  const $img = $this.find('.jr_qr_img');
-  let w, h, x, y;
-  const padding = 10;
+$('.jr_qr_wall').on('wheel', function(event) {
+  event.preventDefault();
+  var delta = event.originalEvent.deltaY;
+  var $this = $(this);
+  var $img = $this.find('.jr_qr_img');
+
+  var w, h, x, y;
+  var padding = 10;
+  var maxSize = Math.min(window.innerWidth, window.innerHeight) - padding * 2;
 
   if (delta > 0) { // 放大
-    w = $this.width() + 20;
-    h = $this.height() + 20;
+    w = $this.width() + 10;
+    h = $this.height() + 10;
   } else { // 缩小
-    w = $this.width() - 20;
-    h = $this.height() - 20;
-    if (w < 100 || h < 100) {
-      return false;
-    }
+    w = $this.width() - 10;
+    h = $this.height() - 10;
   }
+
+  w = Math.min(Math.max(100, w), maxSize);
+  h = Math.min(Math.max(100, h), maxSize);
+
   x = (window.innerWidth - w) / 2 - padding;
   y = (window.innerHeight - h) / 2 - padding;
+
+  // console.log('w, h', w, h, delta);
   
   $this.css('left', x + 'px');
   $this.css('top', y + 'px');
@@ -32,8 +38,6 @@ $('.jr_qr_wall').mousewheel(function(event, delta/* , deltaX, deltaY */) {
   $this.css('height', h + 'px');
   $img.css('width', w + 'px');
   $img.css('height', h + 'px');
-  
-  return false; // 阻止浏览器内容滚动
 });
 
 // 点击黑色区域，关闭

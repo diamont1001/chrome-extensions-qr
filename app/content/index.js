@@ -51,7 +51,7 @@ document.addEventListener('mousedown', function(e) {
   }
 
   // 向 bg.js 发送消息
-  chrome.extension.sendMessage({
+  chrome.runtime.sendMessage({
     name: 'update_menu',
     menus: menus
   });
@@ -61,8 +61,8 @@ document.addEventListener('mousedown', function(e) {
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.name === 'generate_qr' && request.content) {
     // 对于多frame的页面，会出现响应多次消息的BUG
-    var width = 350;
-    var height = 350;
+    var width = 320;
+    var height = 320;
     var padding = 10;
     var x = (window.innerWidth - width) / 2 - padding;
     var y = (window.innerHeight - height) / 2 - padding;
@@ -77,7 +77,12 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         padding: padding,
         x: x,
         y: y,
-        imgUrl: jrQrcode.getQrBase64(request.content)
+        imgUrl: jrQrcode.getQrBase64(request.content, {
+          padding: padding * 2,
+          width: width * 2,
+          height: height * 2,
+          correctLevel: QRErrorCorrectLevel.L
+        })
       }));
     }
     sendResponse({

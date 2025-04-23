@@ -7,15 +7,15 @@ const InputText = require('./input-text.js');
 
 /* eslint-disable */
 // Google Analytics
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-81627907-3']);
-_gaq.push(['_trackPageview']);
+// var _gaq = _gaq || [];
+// _gaq.push(['_setAccount', 'UA-81627907-3']);
+// _gaq.push(['_trackPageview']);
 
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = 'https://ssl.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+// (function() {
+//   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+//   ga.src = 'https://ssl.google-analytics.com/ga.js';
+//   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+// })();
 /* eslint-enable */
 
 $(function() {
@@ -30,11 +30,13 @@ $(function() {
   $('#inputTextMyself').val(InputText.getValue());
 
   // 生成当前页面链接二维码
-  chrome.tabs.getSelected(null, function(tab) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    var tab = tabs[0];
+
     const imgUrl = jrQrcode.getQrBase64(tab.url, {
       padding: 10,
-      width: 150,
-      height: 150,
+      width: 200,
+      height: 200,
       correctLevel: QRErrorCorrectLevel.L
     });
     $main.find('.main-qr').attr('src', imgUrl);
@@ -46,7 +48,7 @@ $(function() {
     $('.section_1').addClass('hide');
     $('.section_2').removeClass('hide');
 
-    _gaq.push(['_trackEvent', 'btn_popup_main_qr_myself', 'clicked']);
+    // _gaq.push(['_trackEvent', 'btn_popup_main_qr_myself', 'clicked']);
   });
 
   $('#btnBack').click(function(e) {
@@ -59,7 +61,7 @@ $(function() {
     InputText.clear();
     $('#inputTextMyself').val('');
 
-    _gaq.push(['_trackEvent', 'btn_popup_back', 'clicked']);
+    // _gaq.push(['_trackEvent', 'btn_popup_back', 'clicked']);
   });
 
   // 自定义内容生成二维码
@@ -76,7 +78,7 @@ $(function() {
 
     InputText.setValue(input);
 
-    _gaq.push(['_trackEvent', 'btn_popup_generate_qr_myself', 'clicked']);
+    // _gaq.push(['_trackEvent', 'btn_popup_generate_qr_myself', 'clicked']);
   });
 
   $(window).unload(function() {
